@@ -4,7 +4,7 @@ const {router}=require('./RouteHandler');
 
 const app=express();
 const cors=require('cors');
-const PORT=5000;
+const PORT=process.env.PORT||5000;
 
 app.listen(PORT,()=>{
     console.log(`server started listening on ${PORT}`)
