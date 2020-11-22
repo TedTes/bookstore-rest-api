@@ -13,8 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "nodemon ./controller/index.js",
-    "start": "node ./controller/index.js"
+    "dev": "nodemon ./controller/RequestHandler.js",
+    "start": "node ./controller/RequestHandler.js"
   },
   "keywords": [],
   "author": "",
