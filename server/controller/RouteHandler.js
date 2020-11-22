@@ -7,7 +7,6 @@ router.get('/books',(req,res)=>{
     const q=req.query.q;
     const field=req.query.field;
     const pageNum=req.query.pageNum;
-    console.log(res.query);
     fetchData({q,field,pageNum},res).catch(e=>console.log(e));
  
 })
