@@ -18,11 +18,16 @@ const setCurrentPage=(page)=>{
   setPage(page);
   }
 
+
   const handleChange=(input,select)=>{
    if(select!==undefined)  setSelectParam(select.value);
-    setInputParam(input.value);
+
+  setInputParam(input.value);
 }
   useEffect(() =>{
+   if(inputParam===undefined) setInputParam('all')
+   console.log('from in')
+   console.log(inputParam)
     axios.get(`https://bookstoresserver.herokuapp.com/api/v1/books?pageNum=${pageNum}&q=${inputParam}&field=${selectParam}`).then(res=>{
           if(res.data.length!==0) setData(res.data);
           setContentLength(res.headers['content-length'])
@@ -35,8 +40,7 @@ const setCurrentPage=(page)=>{
         <Search handleChange={handleChange} />
       </header>
      <Switch>
-     
-    <Route exact path={'/'} render={()=><div>
+        <Route exact path={'/'} render={()=><div>
       <div className="books-container">
       <Books data={data} selectParam={selectParam} inputParam={inputParam} pageNum={pageNum}/></div>
        <div className="pagination">

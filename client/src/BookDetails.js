@@ -12,6 +12,8 @@ export default function BookDetails(){
    const selectParam=location.search.split('?')[1].split('&')[2]
    const inputParam=location.search.split('?')[1].split('&')[1];
    const pageNum=location.search.split('?')[1].split('&')[0];
+
+
    const context=useContext(BookContext)
    const id=match.params.id
    useEffect(() => {
